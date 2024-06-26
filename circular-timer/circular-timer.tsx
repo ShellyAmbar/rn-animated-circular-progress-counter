@@ -44,7 +44,6 @@ const CircularTimer = ({
       setTimeLeft((prev) => {
         if (isCountDown ? prev === 1 : prev === duration) {
           clearInterval(interval);
-          onFinish();
           return isCountDown ? 0 : duration;
         }
         return isCountDown ? prev - 1 : prev + 1;
@@ -53,6 +52,12 @@ const CircularTimer = ({
 
     return () => clearInterval(interval);
   }, [duration]);
+
+  useEffect(() => {
+    if (isCountDown ? timeLeft === 0 : timeLeft === duration + 1) {
+      onFinish();
+    }
+  }, [timeLeft]);
 
   const animatedProps = useAnimatedProps(() => {
     return {
