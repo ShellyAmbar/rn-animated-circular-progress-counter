@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, memo} from "react";
 import {View, Text} from "react-native";
 import Svg, {Circle} from "react-native-svg";
 import Animated, {
@@ -92,4 +92,4 @@ const CircularTimer = ({
   );
 };
 
-export default CircularTimer;
+export default memo(CircularTimer);
