@@ -1,0 +1,35 @@
+{
+  "name": "react-native-animated-circular-counter",
+  "version": "1.0.0",
+  "description": "A react native component of animated circular progress-bar that can use for counting up/down with animation of filling/ un-filling circle.",
+  "main": "./circular-timer/circular-timer.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShellyAmbar/rn-animated-circular-progress-counter.git"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-svg": "*",
+    "react-native-reanimated": "*"
+  },
+  "keywords": [
+    "circular",
+    "progress",
+    "counter",
+    "progressbar",
+    "animated",
+    "progress-bar",
+    "count down",
+    "count up"
+  ],
+  "author": "Shelly Ambar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShellyAmbar/rn-animated-circular-progress-counter/issues"
+  },
+  "homepage": "https://github.com/ShellyAmbar/rn-animated-circular-progress-counter#readme"
+}
