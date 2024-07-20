@@ -1,4 +1,4 @@
-import React, {useEffect, useState, memo} from "react";
+import React, {useEffect, useState, memo, useCallback} from "react";
 import {View, Text} from "react-native";
 import Svg, {Circle} from "react-native-svg";
 import Animated, {
@@ -59,6 +59,19 @@ const CircularTimer = ({
     }
   }, [timeLeft]);
 
+  const formatTimeToMinutesSecondsMillisec = useCallback(
+    (time: Number) => {
+      const milliseconds = time * intervalDuration;
+      const minutes = Math.floor(milliseconds / 60000);
+      const seconds = Math.floor((milliseconds % 60000) / 1000);
+
+      return `${minutes < 10 ? "0" : ""}${minutes}:${
+        seconds < 10 ? "0" : ""
+      }${seconds}`;
+    },
+    [timeLeft]
+  );
+
   const animatedProps = useAnimatedProps(() => {
     return {
       strokeDashoffset: animateFillProgress
@@ -91,7 +104,9 @@ const CircularTimer = ({
         />
       </Svg>
       <View style={styles.textView}>
-        <Text style={{...styles.text, ...textStyle}}>{timeLeft}</Text>
+        <Text style={{...styles.text, ...textStyle}}>
+          {formatTimeToMinutesSecondsMillisec(timeLeft)}
+        </Text>
       </View>
     </View>
   );

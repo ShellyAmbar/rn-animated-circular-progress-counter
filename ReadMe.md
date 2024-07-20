@@ -12,7 +12,7 @@
 ## How to use:
 
 ```
-import CircularTimer from 'rn-animated-circular-progress-counter';
+import CircularTimer from 'react-native-animated-circular-counter';
 
   <CircularTimer
             duration={10}
